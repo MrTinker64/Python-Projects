@@ -8,6 +8,6 @@ def iterative_loop(n: int):
         print(sequence)
     else:
         sequence.append(round(n, 1))
-        iterative_loop(0.5*n+4)
+        iterative_loop(1.04*n+75)
     
 iterative_loop(int(input("Starting value: ")))
