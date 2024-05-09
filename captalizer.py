@@ -1,8 +1,12 @@
 lower_case_words = ["a", "an", "the", "at", "by", "for", "in", "of", "on", "to", "up", "and", "as", "but", "or", "nor"]
 
 def capitalize_if(word):
+    word = str(word)
     if not word in lower_case_words:
-        return word.capitalize()
+        if word.isupper():
+            return word
+        else:
+            return word.capitalize()
     else:
         return word
 
