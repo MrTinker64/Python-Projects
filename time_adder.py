@@ -13,6 +13,6 @@ except ValueError:
     minute2 = 0
 total_minutes = (int(hour1) * 60) + int(minute1) + (int(hour2) * 60) + int(minute2)
 remainder_minutes = total_minutes % 60
-total_hours = total_minutes // 60 % 12
+total_hours = total_minutes // 60 % 12 or 12
 
 print(f"New time: {total_hours}:{add_0(remainder_minutes)}")
