@@ -23,5 +23,4 @@ total_minutes = ((int(hour2) * 60) + int(minute2)) - ((int(hour1) * 60) + int(mi
 remainder_minutes = total_minutes % 60
 total_hours = (total_minutes // 60) % 12 or 12
 
-# print(f"Hour1 = {hour1}, Minute1 = {minute1}\nHour2 = {hour2}, Minute2 = {minute2}")
 print(f"Time difference: {total_hours}:{add_0(remainder_minutes)}")
