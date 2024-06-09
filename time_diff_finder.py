@@ -21,6 +21,6 @@ hour1, minute1, am_pm1 = get_time(1)
 hour2, minute2, am_pm2 = get_time(2)
 total_minutes = ((int(hour2) * 60) + int(minute2)) - ((int(hour1) * 60) + int(minute1))
 remainder_minutes = total_minutes % 60
-total_hours = (total_minutes // 60) % 12 or 12
+total_hours = (total_minutes // 60) % 24 or 12
 
 print(f"Time difference: {total_hours}:{add_0(remainder_minutes)}")
