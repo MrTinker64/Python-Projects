@@ -16,3 +16,5 @@ remainder_minutes = total_minutes % 60
 total_hours = total_minutes // 60 % 12 or 12
 
 print(f"New time: {total_hours}:{add_0(remainder_minutes)}")
+
+# TODO Add AM/PM
