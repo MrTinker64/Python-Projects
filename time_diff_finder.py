@@ -12,7 +12,7 @@ def get_time(index: int):
         current_time = datetime.now().strftime('%H:%M')
         inputTime = current_time
     try:
-        time, am_pm = inputTime.split(" ")
+        time, am_pm = inputTime.split
         hour, minute = time.split(":")
     except ValueError:
         am_pm = ""
