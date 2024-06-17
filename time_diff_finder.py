@@ -17,7 +17,7 @@ def get_time(index: int):
     except ValueError:
         am_pm = ""
         hour, minute = inputTime.split(":")
-    if am_pm == "PM":
+    if am_pm.lower == "pm":
         hour = int(hour) + 12
     return int(hour), int(minute)
 
