@@ -24,7 +24,7 @@ def get_time(index: int):
         hour = time
         minute = 0
 
-    if am_pm == "PM":
+    if am_pm.lower() == "pm":
         hour = int(hour) + 12
         
     return int(hour), int(minute)
@@ -36,5 +36,3 @@ remainder_minutes = total_minutes % 60
 total_hours = total_minutes // 60 % 12 or 12
 
 print(f"New time: {total_hours}:{add_0(remainder_minutes)}")
-
-# TODO Add AM/PM
