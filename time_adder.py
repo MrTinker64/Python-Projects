@@ -13,7 +13,7 @@ def get_time(index: int):
         inputTime = current_time
     
     try:
-        time, am_pm = inputTime.split(" ")
+        time, am_pm = inputTime.split()
     except ValueError:
         am_pm = ""
         time = inputTime
