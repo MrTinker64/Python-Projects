@@ -25,9 +25,12 @@ def get_time(index: int):
         minute = 0
 
     if am_pm.lower() == "pm":
-        hour = int(hour) + 12
-        
-    return int(hour), int(minute)
+            hour = int(hour) + 12
+
+    try:
+        return int(hour), int(minute)
+    except ValueError:
+        return 0, int(minute)
 
 hour1, minute1 = get_time(1)
 hour2, minute2 = get_time(2)
