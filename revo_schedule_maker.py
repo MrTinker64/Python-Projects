@@ -1,25 +1,28 @@
-# Create a new dictionary to maintain insertion order of tasks
-person_schedule_ordered = defaultdict(list)
+# Load the updated CSV file
+updated_file_path = "/mnt/data/Revo 25 Schedule - Main (1).csv"
+df_updated = pd.read_csv(updated_file_path)
 
-# Go through each row in order and append tasks in that order
-for _, row in df_filtered.iterrows():
+# Drop the second row (index 1) and rows without necessary columns
+df_updated_cleaned = df_updated.drop(index=1)
+df_filtered_updated = df_updated_cleaned.dropna(subset=["Task", "Sign Ups", "Start Time", "End Time"])
+
+# Rebuild the ordered schedule
+person_schedule_updated = defaultdict(list)
+
+for _, row in df_filtered_updated.iterrows():
     task = row["Task"]
     start = row["Start Time"]
     end = row["End Time"]
     sign_ups = [name.strip() for name in str(row["Sign Ups"]).split(",")]
     time_range = f"{start}-{end}"
-
+    
     for name in sign_ups:
-        person_schedule_ordered[name].append(f"{time_range} {task}")
+        person_schedule_updated[name].append(f"{time_range} {task}")
 
-# Convert to DataFrame preserving original order
-schedule_df_ordered = pd.DataFrame(
-    [
-        {"Name": name, "Schedule": "\n".join(tasks)}
-        for name, tasks in person_schedule_ordered.items()
-    ]
-)
+# Create the DataFrame
+schedule_df_updated = pd.DataFrame([
+    {"Name": name, "Schedule": "\n".join(tasks)}
+    for name, tasks in person_schedule_updated.items()
+])
 
-tools.display_dataframe_to_user(
-    name="Ordered Individual Schedules", dataframe=schedule_df_ordered
-)
+tools.display_dataframe_to_user(name="Updated Individual Schedules", dataframe=schedule_df_updated)
