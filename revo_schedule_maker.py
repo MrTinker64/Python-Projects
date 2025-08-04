@@ -1,5 +1,5 @@
 # Load the updated CSV file
-updated_file_path = "/mnt/data/Revo 25 Schedule - Main (1).csv"
+updated_file_path = "/Users/akatzman26/Downloads/Revo 25 Schedule - Main.csv"
 df_updated = pd.read_csv(updated_file_path)
 
 # Drop the second row (index 1) and rows without necessary columns
