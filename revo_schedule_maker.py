@@ -17,10 +17,9 @@ for _, row in df_filtered_updated.iterrows():
     start = row["Start Time"]
     end = row["End Time"]
     sign_ups = [name.strip() for name in str(row["Sign Ups"]).split(",")]
-    time_range = f"{start}-{end}"
     
     for name in sign_ups:
-        person_schedule_updated[name].append(f"{time_range} {task}")
+        person_schedule_updated[name].append(f"{start} {task} \n{end}")
 
 # Create the DataFrame
 schedule_df_updated = pd.DataFrame([
