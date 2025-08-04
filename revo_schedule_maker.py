@@ -6,8 +6,7 @@ updated_file_path = "/Users/akatzman26/Downloads/Revo 25 Schedule - Main.csv"
 df_updated = pd.read_csv(updated_file_path)
 
 # Drop the second row (index 1) and rows without necessary columns
-df_updated_cleaned = df_updated.drop(index=2)
-df_filtered_updated = df_updated_cleaned.dropna(subset=["Task", "Sign Ups", "Start Time", "End Time"])
+df_filtered_updated = df_updated.dropna(subset=["Task", "Sign Ups", "Start Time", "End Time"])
 
 # Rebuild the ordered schedule
 person_schedule_updated = defaultdict(list)
